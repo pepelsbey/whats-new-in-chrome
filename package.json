@@ -1,0 +1,13 @@
+{
+	"private": true,
+	"type": "module",
+	"description": "Generates an Atom feed of Chrome release notes and “New in Chrome” blog posts.",
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"build": "node src/generate.js",
+		"test": "node --test"
+	},
+	"license": "MIT"
+}
