@@ -10,9 +10,9 @@ on:
   push:
     branches: [main]
 
-# Allow the workflow to publish to GitHub Pages.
+# Allow the workflow to commit the feed and publish to GitHub Pages.
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -41,6 +41,20 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: public
+
+      # Committing the feed keeps the repository active, so GitHub doesn’t
+      # disable the schedule after 60 days of inactivity.
+      - name: Commit feed
+        run: |
+          if [ -z "$(git status --porcelain public)" ]; then
+            echo 'Feed unchanged, nothing to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public
+          git commit -m 'Update feed'
+          git push
 
   deploy:
     needs: build

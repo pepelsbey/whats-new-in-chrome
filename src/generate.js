@@ -48,7 +48,7 @@ async function collectSource(source) {
 }
 
 async function generate() {
-	console.log(`Generating "${FEED_TITLE}" feed…`);
+	console.log('Generating feed…');
 
 	const perSource = await Promise.all(SOURCES.map(collectSource));
 	const entries = sortEntries(perSource.flat()).slice(0, MAX_ITEMS);

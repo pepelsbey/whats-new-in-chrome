@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>What’s new in Chrome</title>
+	<subtitle>Chrome release notes and “New in Chrome” blog posts, combined into one feed.</subtitle>
+	<id>https://pepelsbey.github.io/whats-new-in-chrome/feed.xml</id>
+	<link rel="self" type="application/atom+xml" href="https://pepelsbey.github.io/whats-new-in-chrome/feed.xml"/>
+	<link rel="alternate" type="text/html" href="https://pepelsbey.github.io/whats-new-in-chrome/"/>
+	<updated>2026-08-25T00:00:00Z</updated>
+	<author>
+		<name>developer.chrome.com</name>
+	</author>
+	<entry>
+		<title>New in Chrome 152</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-152"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-152</id>
+		<updated>2026-08-25T00:00:00Z</updated>
+		<published>2026-08-25T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">CSSPseudoElement support for additional pseudo-elements, CPU Performance API, and Connection Allowlists.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 152 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/152"/>
+		<id>https://developer.chrome.com/release-notes/152</id>
+		<updated>2026-08-25T00:00:00Z</updated>
+		<published>2026-08-25T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Notification attribution for PWAs on macOS, CPU Performance API, Connection Allowlists, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 151</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-151"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-151</id>
+		<updated>2026-07-28T00:00:00Z</updated>
+		<published>2026-07-28T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">The usermedia element, Declarative Shadow DOM slot assignment, and Soft Navigations performance entries.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 151 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/151"/>
+		<id>https://developer.chrome.com/release-notes/151</id>
+		<updated>2026-07-28T00:00:00Z</updated>
+		<published>2026-07-28T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">XML parsing in Rust, Declarative shadow DOM slot assignment, usermedia element, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 150</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-150"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-150</id>
+		<updated>2026-06-30T00:00:00Z</updated>
+		<published>2026-06-30T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">CSS text-fit property, Focusgroup declarative keyboard navigation, and CSS background-clip border-area.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 150 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/150"/>
+		<id>https://developer.chrome.com/release-notes/150</id>
+		<updated>2026-06-30T00:00:00Z</updated>
+		<published>2026-06-30T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">CSS text-fit property, background-clip border-area, Focusgroup, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 149</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-149"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-149</id>
+		<updated>2026-06-02T00:00:00Z</updated>
+		<published>2026-06-02T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">CSS gap decorations, disconnecting WebSockets for bfcache, and Intl.Locale variants.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 149 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/149"/>
+		<id>https://developer.chrome.com/release-notes/149</id>
+		<updated>2026-06-02T00:00:00Z</updated>
+		<published>2026-06-02T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">CSS gap decorations, path() and shape() in shape-outside, disconnect WebSockets on bfcache entry, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 148</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-148"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-148</id>
+		<updated>2026-05-05T00:00:00Z</updated>
+		<published>2026-05-05T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">CSS name-only container queries, lazy-loading for video and audio, and the Prompt API.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 148 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/148"/>
+		<id>https://developer.chrome.com/release-notes/148</id>
+		<updated>2026-05-05T00:00:00Z</updated>
+		<published>2026-05-05T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">CSS name-only container queries, lazy loading for video and audio, and the Prompt API.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 147</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-147"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-147</id>
+		<updated>2026-04-07T00:00:00Z</updated>
+		<published>2026-04-07T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Element-scoped view transitions, CSS contrast-color(), and the border-shape property.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 147 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/147"/>
+		<id>https://developer.chrome.com/release-notes/147</id>
+		<updated>2026-04-07T00:00:00Z</updated>
+		<published>2026-04-07T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">CSS contrast-color() and border-shape, element-scoped view transitions, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 146</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-146"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-146</id>
+		<updated>2026-03-10T00:00:00Z</updated>
+		<published>2026-03-10T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Scroll-triggered animations, Scoped custom element registries, Sanitizer API, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 146 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/146"/>
+		<id>https://developer.chrome.com/release-notes/146</id>
+		<updated>2026-03-10T00:00:00Z</updated>
+		<published>2026-03-10T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Scroll-triggered animations, Scoped custom element registries, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 145</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-145"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-145</id>
+		<updated>2026-02-10T00:00:00Z</updated>
+		<published>2026-02-10T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Column wrapping for multicol, Device Bound Session Credentials, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 145 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/145"/>
+		<id>https://developer.chrome.com/release-notes/145</id>
+		<updated>2026-02-10T00:00:00Z</updated>
+		<published>2026-02-10T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Column wrapping for multicol, Device Bound Session Credentials, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 144</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-144"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-144</id>
+		<updated>2026-01-13T00:00:00Z</updated>
+		<published>2026-01-13T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Find-in-page highlights, a new geolocation element, the Temporal API, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 144 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/144"/>
+		<id>https://developer.chrome.com/release-notes/144</id>
+		<updated>2026-01-13T00:00:00Z</updated>
+		<published>2026-01-13T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Find-in-page highlights, a new geolocation element, the Temporal API, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 143</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-143"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-143</id>
+		<updated>2025-12-02T00:00:00Z</updated>
+		<published>2025-12-02T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">CSS anchored fallback container queries, side-relative positioning for background position longhands, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 143 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/143"/>
+		<id>https://developer.chrome.com/release-notes/143</id>
+		<updated>2025-12-02T00:00:00Z</updated>
+		<published>2025-12-02T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">CSS anchored fallback container queries, side-relative positioning for background position longhands, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 142</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-142"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-142</id>
+		<updated>2025-10-28T00:00:00Z</updated>
+		<published>2025-10-28T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">The :target-before and :target-after pseudo-classes, range syntax for container queries, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 142 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/142"/>
+		<id>https://developer.chrome.com/release-notes/142</id>
+		<updated>2025-10-28T00:00:00Z</updated>
+		<published>2025-10-28T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">The :target-before and :target-after pseudo-classes, range syntax for container queries, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 141</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-141"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-141</id>
+		<updated>2025-09-30T00:00:00Z</updated>
+		<published>2025-09-30T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">The getAllRecords() method for IndexedDB, WebRTC Encoded Transform V2, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 141 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/141"/>
+		<id>https://developer.chrome.com/release-notes/141</id>
+		<updated>2025-09-30T00:00:00Z</updated>
+		<published>2025-09-30T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">The getAllRecords() method for IndexedDB, WebRTC Encoded Transform V2, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 140</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-140"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-140</id>
+		<updated>2025-09-02T00:00:00Z</updated>
+		<published>2025-09-02T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">The ToggleEvent source attribute, the font-variation-settings descriptor, and more.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 140 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/140"/>
+		<id>https://developer.chrome.com/release-notes/140</id>
+		<updated>2025-09-02T00:00:00Z</updated>
+		<published>2025-09-02T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">The ToggleEvent source attribute, the font-variation-settings descriptor, and more.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 139</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-139"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-139</id>
+		<updated>2025-08-05T00:00:00Z</updated>
+		<published>2025-08-05T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Squircles and custom functions come to CSS, and on-device speech recognition to the Web Speech API.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 139 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/139"/>
+		<id>https://developer.chrome.com/release-notes/139</id>
+		<updated>2025-08-05T00:00:00Z</updated>
+		<published>2025-08-05T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Squircles and custom functions come to CSS, and on-device speech recognition to the Web Speech API.</summary>
+	</entry>
+	<entry>
+		<title>New in Chrome 138</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-138"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-138</id>
+		<updated>2025-06-24T00:00:00Z</updated>
+		<published>2025-06-24T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Several new CSS functions, and built-in AI APIs for summarizing, translating, and detecting language.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 138 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/138"/>
+		<id>https://developer.chrome.com/release-notes/138</id>
+		<updated>2025-06-24T00:00:00Z</updated>
+		<published>2025-06-24T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Several new CSS functions, and built-in AI APIs for summarizing, translating, and detecting language.</summary>
+	</entry>
+</feed>
