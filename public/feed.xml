@@ -5,10 +5,28 @@
 	<id>https://pepelsbey.github.io/whats-new-in-chrome/feed.xml</id>
 	<link rel="self" type="application/atom+xml" href="https://pepelsbey.github.io/whats-new-in-chrome/feed.xml"/>
 	<link rel="alternate" type="text/html" href="https://pepelsbey.github.io/whats-new-in-chrome/"/>
-	<updated>2026-08-25T00:00:00Z</updated>
+	<updated>2026-09-08T00:00:00Z</updated>
 	<author>
 		<name>developer.chrome.com</name>
 	</author>
+	<entry>
+		<title>New in Chrome 153</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-153"/>
+		<id>https://developer.chrome.com/blog/new-in-chrome-153</id>
+		<updated>2026-09-08T00:00:00Z</updated>
+		<published>2026-09-08T00:00:00Z</published>
+		<category term="Blog"/>
+		<summary type="text">Single-axis scroll containers, capability elements camera and microphone, and Joint Iteration in JavaScript.</summary>
+	</entry>
+	<entry>
+		<title>Chrome 153 release notes</title>
+		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/153"/>
+		<id>https://developer.chrome.com/release-notes/153</id>
+		<updated>2026-09-08T00:00:00Z</updated>
+		<published>2026-09-08T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Single-axis scroll containers, the scroll-axis-lock property, capability elements, and more.</summary>
+	</entry>
 	<entry>
 		<title>New in Chrome 152</title>
 		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-152"/>
@@ -260,23 +278,5 @@
 		<published>2025-08-05T00:00:00Z</published>
 		<category term="Release notes"/>
 		<summary type="text">Squircles and custom functions come to CSS, and on-device speech recognition to the Web Speech API.</summary>
-	</entry>
-	<entry>
-		<title>New in Chrome 138</title>
-		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-138"/>
-		<id>https://developer.chrome.com/blog/new-in-chrome-138</id>
-		<updated>2025-06-24T00:00:00Z</updated>
-		<published>2025-06-24T00:00:00Z</published>
-		<category term="Blog"/>
-		<summary type="text">Several new CSS functions, and built-in AI APIs for summarizing, translating, and detecting language.</summary>
-	</entry>
-	<entry>
-		<title>Chrome 138 release notes</title>
-		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/138"/>
-		<id>https://developer.chrome.com/release-notes/138</id>
-		<updated>2025-06-24T00:00:00Z</updated>
-		<published>2025-06-24T00:00:00Z</published>
-		<category term="Release notes"/>
-		<summary type="text">Several new CSS functions, and built-in AI APIs for summarizing, translating, and detecting language.</summary>
 	</entry>
 </feed>
