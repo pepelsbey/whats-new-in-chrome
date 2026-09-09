@@ -5,7 +5,6 @@ import {
 	FEED_SUBTITLE,
 	FEED_TITLE,
 	FEED_URL,
-	SITE_URL,
 } from './config.js';
 
 /** Escape text for use in XML character data / attribute values. */
@@ -62,7 +61,6 @@ export function buildAtom(entries, { updated } = {}) {
 	<subtitle>${escapeXml(FEED_SUBTITLE)}</subtitle>
 	<id>${escapeXml(FEED_URL)}</id>
 	<link rel="self" type="application/atom+xml" href="${escapeXml(FEED_URL)}"/>
-	<link rel="alternate" type="text/html" href="${escapeXml(SITE_URL)}"/>
 	<updated>${escapeXml(feedUpdated)}</updated>
 	<author>
 		<name>${escapeXml(FEED_AUTHOR)}</name>

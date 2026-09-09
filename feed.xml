@@ -4,7 +4,6 @@
 	<subtitle>Chrome release notes and “New in Chrome” blog posts, combined into one feed.</subtitle>
 	<id>https://pepelsbey.github.io/whats-new-in-chrome/feed.xml</id>
 	<link rel="self" type="application/atom+xml" href="https://pepelsbey.github.io/whats-new-in-chrome/feed.xml"/>
-	<link rel="alternate" type="text/html" href="https://pepelsbey.github.io/whats-new-in-chrome/"/>
 	<updated>2026-09-08T00:00:00Z</updated>
 	<author>
 		<name>developer.chrome.com</name>

@@ -1,4 +1,4 @@
-name: Build and deploy feed
+name: Build and commit feed
 
 on:
   # Rebuild once a day.
@@ -10,15 +10,13 @@ on:
   push:
     branches: [main]
 
-# Allow the workflow to commit the feed and publish to GitHub Pages.
+# Allow the workflow to commit the feed.
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
-# Only one deployment at a time; let a running deploy finish.
+# Only one run at a time, so two runs can’t race the same commit.
 concurrency:
-  group: pages
+  group: feed
   cancel-in-progress: false
 
 jobs:
@@ -37,32 +35,17 @@ jobs:
       - name: Generate feed
         run: npm run build
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: public
-
-      # Committing the feed keeps the repository active, so GitHub doesn’t
+      # GitHub Pages serves the committed feed.xml from the repository root.
+      # Committing it also keeps the repository active, so GitHub doesn’t
       # disable the schedule after 60 days of inactivity.
       - name: Commit feed
         run: |
-          if [ -z "$(git status --porcelain public)" ]; then
+          if [ -z "$(git status --porcelain feed.xml)" ]; then
             echo 'Feed unchanged, nothing to commit.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public
+          git add feed.xml
           git commit -m 'Update feed'
           git push
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5

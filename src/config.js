@@ -10,7 +10,6 @@ export const CONTENT_QUERY = '?hl=en';
 // Where the generated feed is published. Used for the feed id and self link.
 export const FEED_URL =
 	'https://pepelsbey.github.io/whats-new-in-chrome/feed.xml';
-export const SITE_URL = 'https://pepelsbey.github.io/whats-new-in-chrome/';
 
 export const FEED_TITLE = "What’s new in Chrome";
 export const FEED_SUBTITLE =
