@@ -5,15 +5,23 @@ import { SOURCES } from '../src/config.js';
 import {
 	cleanTitle,
 	decodeEntities,
+	extractFeatureSummary,
 	extractLastUpdated,
+	extractStableRelease,
 	getMeta,
 	normalizeWhitespace,
 	parsePage,
 } from '../src/parse.js';
-import { blogHtml, incompleteHtml, releaseNotesHtml } from './fixtures.js';
+import {
+	blogHtml,
+	chromestatusHtml,
+	incompleteHtml,
+	releaseNotesHtml,
+} from './fixtures.js';
 
 const releaseNotesSource = SOURCES.find((s) => s.id === 'release-notes');
 const blogSource = SOURCES.find((s) => s.id === 'blog');
+const chromestatusSource = SOURCES.find((s) => s.id === 'chromestatus');
 
 test('decodeEntities handles named and numeric entities', () => {
 	assert.equal(decodeEntities('a &amp; b'), 'a & b');
@@ -55,6 +63,31 @@ test('extractLastUpdated returns an ISO timestamp', () => {
 	assert.equal(extractLastUpdated('no date here'), null);
 });
 
+test('extractStableRelease returns an ISO timestamp', () => {
+	assert.equal(extractStableRelease(chromestatusHtml), '2026-10-06T00:00:00Z');
+	assert.equal(
+		extractStableRelease('Scheduled Stable Release December 31, 2026'),
+		'2026-12-31T00:00:00Z',
+	);
+	assert.equal(
+		extractStableRelease('Scheduled Stable Release Smarch 1, 2026'),
+		null,
+	);
+	assert.equal(extractStableRelease('no date here'), null);
+});
+
+test('extractFeatureSummary lists the first few feature names', () => {
+	assert.equal(
+		extractFeatureSummary(chromestatusHtml),
+		'Additional Windowing Controls, Algorithm Updates in WebCrypto, CSS Symbols(), and more.',
+	);
+	assert.equal(
+		extractFeatureSummary(chromestatusHtml, 4),
+		'Additional Windowing Controls, Algorithm Updates in WebCrypto, CSS Symbols(), Margin-trim & more.',
+	);
+	assert.equal(extractFeatureSummary(incompleteHtml), null);
+});
+
 test('parsePage builds a release-notes entry', () => {
 	const entry = parsePage(releaseNotesHtml, {
 		version: 150,
@@ -65,7 +98,7 @@ test('parsePage builds a release-notes entry', () => {
 		sourceId: 'release-notes',
 		category: 'Release notes',
 		version: 150,
-		title: 'Chrome 150 release notes',
+		title: 'Release notes: Chrome 150',
 		summary:
 			'CSS text-fit property, background-clip border-area, Focusgroup, and more.',
 		url: 'https://developer.chrome.com/release-notes/150',
@@ -73,10 +106,10 @@ test('parsePage builds a release-notes entry', () => {
 	});
 });
 
-test('parsePage builds a blog entry with the native title', () => {
+test('parsePage builds a blog entry with the native title and label', () => {
 	const url = 'https://developer.chrome.com/blog/new-in-chrome-150';
 	const entry = parsePage(blogHtml, { version: 150, source: blogSource, url });
-	assert.equal(entry.title, 'New in Chrome 150');
+	assert.equal(entry.title, 'Blog: New in Chrome 150');
 	assert.equal(entry.url, url);
 	assert.equal(
 		entry.summary,
@@ -93,4 +126,23 @@ test('parsePage returns null when required data is missing', () => {
 		}),
 		null,
 	);
+});
+
+test('parsePage builds a chromestatus entry', () => {
+	const url = 'https://chromestatus.com/release-notes/155';
+	const entry = parsePage(chromestatusHtml, {
+		version: 155,
+		source: chromestatusSource,
+		url,
+	});
+	assert.deepEqual(entry, {
+		sourceId: 'chromestatus',
+		category: 'Release notes',
+		version: 155,
+		title: 'Chrome Status: Chrome 155',
+		summary:
+			'Additional Windowing Controls, Algorithm Updates in WebCrypto, CSS Symbols(), and more.',
+		url,
+		updated: '2026-10-06T00:00:00Z',
+	});
 });

@@ -1,11 +1,18 @@
 // Central configuration for the feed generator.
 
-export const SITE_ORIGIN = 'https://developer.chrome.com';
+import {
+	extractFeatureSummary,
+	extractLastUpdated,
+	extractStableRelease,
+} from './parse.js';
+
+const DEVELOPER_ORIGIN = 'https://developer.chrome.com';
+const CHROMESTATUS_ORIGIN = 'https://chromestatus.com';
 
 // developer.chrome.com serves localized variants of a page non-deterministically
 // (a plain request can come back in any language). Forcing the English locale
 // makes both the title and the "Last updated" date stable across runs.
-export const CONTENT_QUERY = '?hl=en';
+const DEVELOPER_QUERY = '?hl=en';
 
 // Where the generated feed is published. Used for the feed id and self link.
 export const FEED_URL =
@@ -14,7 +21,7 @@ export const FEED_URL =
 export const FEED_TITLE = "What’s new in Chrome";
 export const FEED_SUBTITLE =
 	'Chrome release notes and “New in Chrome” blog posts, combined into one feed.';
-export const FEED_AUTHOR = 'developer.chrome.com';
+export const FEED_AUTHOR = 'Google Chrome';
 
 // Chrome versions are probed as integers. Nothing older than this floor is
 // ever included, which keeps the daily scan bounded.
@@ -37,22 +44,51 @@ export const MAX_ITEMS = 30;
 // How many probes/fetches to run at once.
 export const CONCURRENCY = 8;
 
-// The two sources. Each maps a Chrome version number to a page URL and turns
-// the page’s raw <og:title> into a clean feed entry title.
+// The sources. Each maps a Chrome version number to a page URL, turns the
+// page’s raw <og:title> into a clean feed entry title, and reads the entry date.
+// Every entry title starts with the source’s label, so readers can tell where
+// it comes from: "Chrome Status: Chrome 155".
+// Entries dated in the future (upcoming releases) are left out.
 export const SOURCES = [
 	{
 		id: 'release-notes',
 		category: 'Release notes',
+		label: 'Release notes',
+		origin: DEVELOPER_ORIGIN,
+		query: DEVELOPER_QUERY,
 		path: (version) => `/release-notes/${version}`,
-		// og:title looks like "Chrome 150" -> keep as-is, add a suffix so the
-		// entry is distinguishable from the blog post for the same version.
-		title: (cleanTitle) => `${cleanTitle} release notes`,
+		// og:title already reads "Chrome 150".
+		title: (cleanTitle) => cleanTitle,
+		date: extractLastUpdated,
 	},
 	{
 		id: 'blog',
 		category: 'Blog',
+		label: 'Blog',
+		origin: DEVELOPER_ORIGIN,
+		query: DEVELOPER_QUERY,
 		path: (version) => `/blog/new-in-chrome-${version}`,
 		// og:title already reads "New in Chrome 150".
 		title: (cleanTitle) => cleanTitle,
+		date: extractLastUpdated,
+	},
+	{
+		id: 'chromestatus',
+		category: 'Release notes',
+		label: 'Chrome Status',
+		origin: CHROMESTATUS_ORIGIN,
+		query: '',
+		// Versions without a page here redirect to developer.chrome.com, which
+		// version probing treats as missing.
+		path: (version) => `/release-notes/${version}`,
+		// og:title reads "Chrome 155 Release Notes" -> "Chrome 155".
+		title: (cleanTitle) => cleanTitle.replace(/\s*release notes$/i, ''),
+		// Pages exist ahead of time for upcoming milestones and only carry the
+		// scheduled stable release date.
+		date: extractStableRelease,
+		// og:description is the same boilerplate on every page.
+		summary: extractFeatureSummary,
+		// Only fill in versions the developer.chrome.com release notes don’t have.
+		fallbackFor: 'release-notes',
 	},
 ];

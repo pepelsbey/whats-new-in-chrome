@@ -80,25 +80,61 @@ export function extractLastUpdated(html) {
 	return `${match[1]}T00:00:00Z`;
 }
 
+const MONTHS = [
+	'january', 'february', 'march', 'april', 'may', 'june',
+	'july', 'august', 'september', 'october', 'november', 'december',
+];
+
+/**
+ * Extract the "Scheduled Stable Release October 6, 2026" date chromestatus
+ * renders under the page title. Returns an ISO 8601 UTC timestamp (midnight)
+ * or null.
+ */
+export function extractStableRelease(html) {
+	const match = html.match(
+		/Scheduled Stable Release\s+([a-z]+)\s+(\d{1,2}),\s+(\d{4})/i,
+	);
+	if (!match) return null;
+	const month = MONTHS.indexOf(match[1].toLowerCase());
+	if (month === -1) return null;
+	const date = new Date(Date.UTC(Number(match[3]), month, Number(match[2])));
+	return date.toISOString().replace('.000Z', 'Z');
+}
+
+/**
+ * Summarize a chromestatus release notes page by its first few feature names,
+ * in the style of the developer.chrome.com descriptions. Returns null when the
+ * page lists no features.
+ */
+export function extractFeatureSummary(html, limit = 3) {
+	const pattern = /<a[^>]+class="feature-name"[^>]*>([^<]*)<\/a>/gi;
+	const names = [...html.matchAll(pattern)]
+		.map((match) => normalizeWhitespace(decodeEntities(match[1])))
+		.filter(Boolean);
+	if (names.length === 0) return null;
+	if (names.length <= limit) return names.join(', ') + '.';
+	return names.slice(0, limit).join(', ') + ', and more.';
+}
+
 /**
  * Build a feed entry from a fetched page. `url` is the page’s clean, canonical
  * URL (the caller already knows it). Returns null when the page is missing the
- * title or date we need — which, given we force the English locale, signals the
- * page markup changed rather than a normal "not an entry" case.
+ * title or date we need — which signals the page markup changed rather than a
+ * normal "not an entry" case.
  */
 export function parsePage(html, { version, source, url }) {
 	const title = cleanTitle(getMeta(html, 'og:title'));
 	if (!title) return null;
 
-	const updated = extractLastUpdated(html);
+	const updated = source.date(html);
 	if (!updated) return null;
 
 	return {
 		sourceId: source.id,
 		category: source.category,
 		version,
-		title: source.title(title),
-		summary: getMeta(html, 'og:description') ?? '',
+		title: `${source.label}: ${source.title(title)}`,
+		summary: source.summary?.(html) ?? getMeta(html, 'og:description') ?? '',
 		url,
 		updated,
 	};

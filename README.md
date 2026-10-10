@@ -1,9 +1,10 @@
 # What’s new in Chrome
 
-Generates an Atom feed that combines two sources into one:
+Generates an Atom feed that combines three sources into one:
 
 - **Release notes** — every [Chrome release note](https://developer.chrome.com/release-notes).
 - **Blog** — every [“New in Chrome”](https://developer.chrome.com/blog) stable release post.
+- **Chrome Status** — [release notes](https://chromestatus.com/release-notes/155) for versions that don’t have developer.chrome.com release notes, once they reach their scheduled stable release date.
 
 A GitHub Action rebuilds the feed daily and publishes it to GitHub Pages:
 
@@ -14,8 +15,8 @@ There’s an [official RSS feed](https://developer.chrome.com/static/blog/feed.x
 ## How it works
 
 1. **Discovers versions** by probing version-numbered URLs, scanning upward until it runs past the newest release.
-2. **Fetches** the most recent pages and reads the title, description, and last-updated date from each.
-3. **Builds** an Atom feed and writes it to `feed.xml`.
+2. **Fetches** the most recent pages and reads the title, description, and date from each, skipping releases scheduled in the future.
+3. **Builds** an Atom feed and writes it to `feed.xml`. Each entry title starts with its source, like “Chrome Status: Chrome 155”.
 
 ## Local development
 

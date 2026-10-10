@@ -1,14 +1,19 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { buildAtom, escapeXml, sortEntries } from '../src/atom.js';
+import {
+	buildAtom,
+	escapeXml,
+	mergeSources,
+	sortEntries,
+} from '../src/atom.js';
 
 const sample = [
 	{
 		sourceId: 'release-notes',
 		category: 'Release notes',
 		version: 150,
-		title: 'Chrome 150 release notes',
+		title: 'Release notes: Chrome 150',
 		summary: 'A & B < C',
 		url: 'https://developer.chrome.com/release-notes/150',
 		updated: '2026-06-30T00:00:00Z',
@@ -17,7 +22,7 @@ const sample = [
 		sourceId: 'blog',
 		category: 'Blog',
 		version: 149,
-		title: 'New in Chrome 149',
+		title: 'Blog: New in Chrome 149',
 		summary: '',
 		url: 'https://developer.chrome.com/blog/new-in-chrome-149',
 		updated: '2026-05-27T00:00:00Z',
@@ -43,6 +48,30 @@ test('sortEntries orders newest-first with deterministic tie-breaks', () => {
 			[150, 'blog'],
 			[150, 'release-notes'],
 			[200, 'blog'],
+		],
+	);
+});
+
+test('mergeSources drops fallback entries for covered versions', () => {
+	const sources = [
+		{ id: 'release-notes' },
+		{ id: 'blog' },
+		{ id: 'chromestatus', fallbackFor: 'release-notes' },
+	];
+	const merged = mergeSources(sources, [
+		[{ sourceId: 'release-notes', version: 153 }],
+		[{ sourceId: 'blog', version: 154 }],
+		[
+			{ sourceId: 'chromestatus', version: 153 },
+			{ sourceId: 'chromestatus', version: 154 },
+		],
+	]);
+	assert.deepEqual(
+		merged.map((e) => [e.sourceId, e.version]),
+		[
+			['release-notes', 153],
+			['blog', 154],
+			['chromestatus', 154],
 		],
 	);
 });

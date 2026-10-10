@@ -1,4 +1,4 @@
-// Atom 1.0 feed serialization. Pure functions, no network.
+// Feed assembly and Atom 1.0 serialization. Pure functions, no network.
 
 import {
 	FEED_AUTHOR,
@@ -26,6 +26,24 @@ export function sortEntries(entries) {
 		if (a.updated !== b.updated) return a.updated < b.updated ? 1 : -1;
 		if (a.version !== b.version) return b.version - a.version;
 		return a.sourceId < b.sourceId ? -1 : 1;
+	});
+}
+
+/**
+ * Merge per-source entry lists (in `sources` order) into one list. A source
+ * with `fallbackFor` only contributes versions the named source doesn’t have.
+ */
+export function mergeSources(sources, perSource) {
+	const versionsOf = new Map(
+		sources.map((source, i) => [
+			source.id,
+			new Set(perSource[i].map((entry) => entry.version)),
+		]),
+	);
+	return sources.flatMap((source, i) => {
+		const covered = versionsOf.get(source.fallbackFor);
+		if (!covered) return perSource[i];
+		return perSource[i].filter((entry) => !covered.has(entry.version));
 	});
 }
 

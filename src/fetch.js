@@ -4,7 +4,6 @@ import {
 	CONCURRENCY,
 	GAP_TOLERANCE,
 	MAX_VERSION_OFFSET,
-	SITE_ORIGIN,
 } from './config.js';
 
 const USER_AGENT =
@@ -70,12 +69,19 @@ async function mapLimit(items, limit, task) {
 	return results;
 }
 
-/** True if a version page exists (HTTP 200), via a cheap HEAD request. */
+/**
+ * True if a version page exists (HTTP 200), via a cheap HEAD request. Redirects
+ * within the source are fine (developer.chrome.com randomly redirects to
+ * localized variants), but a page that redirects to another site (chromestatus
+ * sends older versions to developer.chrome.com) doesn’t exist in this source.
+ */
 async function versionExists(source, version) {
-	const response = await request(SITE_ORIGIN + source.path(version), {
+	const response = await request(source.origin + source.path(version), {
 		method: 'HEAD',
 	});
-	return response.status === 200;
+	return (
+		response.status === 200 && new URL(response.url).origin === source.origin
+	);
 }
 
 /**
