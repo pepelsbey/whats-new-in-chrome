@@ -87,6 +87,8 @@ test('buildAtom produces a well-formed document', () => {
 	assert.match(xml, /<summary type="text">A &amp; B &lt; C<\/summary>/);
 	assert.match(xml, /<id>https:\/\/developer\.chrome\.com\/release-notes\/150<\/id>/);
 	assert.match(xml, /<link rel="self"[^>]+feed\.xml"\/>/);
+	assert.match(xml, /<link rel="alternate" type="text\/html" href="https:\/\/[^"]+\/"\/>/);
+	assert.match(xml, /<icon>https:\/\/[^<]+\/apple-touch-icon\.png<\/icon>/);
 });
 
 test('buildAtom handles an empty feed with a fallback timestamp', () => {

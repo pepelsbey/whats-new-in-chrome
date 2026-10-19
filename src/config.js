@@ -14,9 +14,18 @@ const CHROMESTATUS_ORIGIN = 'https://chromestatus.com';
 // makes both the title and the "Last updated" date stable across runs.
 const DEVELOPER_QUERY = '?hl=en';
 
-// Where the generated feed is published. Used for the feed id and self link.
-export const FEED_URL =
-	'https://pepelsbey.github.io/whats-new-in-chrome/feed.xml';
+// Where the generated feed, its home page, and its icons are published.
+const SITE_URL = 'https://pepelsbey.github.io/whats-new-in-chrome';
+
+// The home page, linked as the feed’s alternate. Some feed readers look for
+// icons there instead of in the feed.
+export const FEED_HOME = `${SITE_URL}/`;
+
+// Used for the feed id and self link.
+export const FEED_URL = `${SITE_URL}/feed.xml`;
+
+// Square icon that feed readers show next to the feed.
+export const FEED_ICON = `${SITE_URL}/apple-touch-icon.png`;
 
 export const FEED_TITLE = "What’s new in Chrome";
 export const FEED_SUBTITLE =

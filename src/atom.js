@@ -2,6 +2,8 @@
 
 import {
 	FEED_AUTHOR,
+	FEED_HOME,
+	FEED_ICON,
 	FEED_SUBTITLE,
 	FEED_TITLE,
 	FEED_URL,
@@ -79,6 +81,8 @@ export function buildAtom(entries, { updated } = {}) {
 	<subtitle>${escapeXml(FEED_SUBTITLE)}</subtitle>
 	<id>${escapeXml(FEED_URL)}</id>
 	<link rel="self" type="application/atom+xml" href="${escapeXml(FEED_URL)}"/>
+	<link rel="alternate" type="text/html" href="${escapeXml(FEED_HOME)}"/>
+	<icon>${escapeXml(FEED_ICON)}</icon>
 	<updated>${escapeXml(feedUpdated)}</updated>
 	<author>
 		<name>${escapeXml(FEED_AUTHOR)}</name>
