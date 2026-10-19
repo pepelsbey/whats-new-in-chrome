@@ -29,7 +29,7 @@ export const FEED_ICON = `${SITE_URL}/apple-touch-icon.png`;
 
 export const FEED_TITLE = "What’s new in Chrome";
 export const FEED_SUBTITLE =
-	'Chrome release notes and “New in Chrome” blog posts, combined into one feed.';
+	'All Chrome release notes sources combined into one feed';
 export const FEED_AUTHOR = 'Google Chrome';
 
 // Chrome versions are probed as integers. Nothing older than this floor is
