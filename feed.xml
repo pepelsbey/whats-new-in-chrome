@@ -38,6 +38,15 @@
 		<summary type="text">Responsively-sized iframes, CSS scroll-marker-group modes, and CSS text-decoration-inset.</summary>
 	</entry>
 	<entry>
+		<title>Chrome Status: Chrome 154</title>
+		<link rel="alternate" type="text/html" href="https://chromestatus.com/release-notes/154"/>
+		<id>https://chromestatus.com/release-notes/154</id>
+		<updated>2026-09-22T00:00:00Z</updated>
+		<published>2026-09-22T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Add options bag to WebSocket constructor, Fetch API: Forward reason from AbortController to fetch Response, Support targetAddressSpace option for WebSockets, and more.</summary>
+	</entry>
+	<entry>
 		<title>Release notes: Chrome 154</title>
 		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/154"/>
 		<id>https://developer.chrome.com/release-notes/154</id>
@@ -56,6 +65,15 @@
 		<summary type="text">Single-axis scroll containers, capability elements camera and microphone, and Joint Iteration in JavaScript.</summary>
 	</entry>
 	<entry>
+		<title>Chrome Status: Chrome 153</title>
+		<link rel="alternate" type="text/html" href="https://chromestatus.com/release-notes/153"/>
+		<id>https://chromestatus.com/release-notes/153</id>
+		<updated>2026-09-08T00:00:00Z</updated>
+		<published>2026-09-08T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Capability elements: &lt;camera&gt; and &lt;microphone&gt;, XML parsing in Rust for non-XSLT scenarios, Immersive Audio Model and Formats (IAMF) decoding support, and more.</summary>
+	</entry>
+	<entry>
 		<title>Release notes: Chrome 153</title>
 		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/153"/>
 		<id>https://developer.chrome.com/release-notes/153</id>
@@ -72,6 +90,15 @@
 		<published>2026-08-25T00:00:00Z</published>
 		<category term="Blog"/>
 		<summary type="text">CSSPseudoElement support for additional pseudo-elements, CPU Performance API, and Connection Allowlists.</summary>
+	</entry>
+	<entry>
+		<title>Chrome Status: Chrome 152</title>
+		<link rel="alternate" type="text/html" href="https://chromestatus.com/release-notes/152"/>
+		<id>https://chromestatus.com/release-notes/152</id>
+		<updated>2026-08-25T00:00:00Z</updated>
+		<published>2026-08-25T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">CPU Performance API, Notification attribution for PWAs on macOS, CSSPseudoElement support for ::backdrop, ::scroll-marker and ::view-transitions, and more.</summary>
 	</entry>
 	<entry>
 		<title>Release notes: Chrome 152</title>
@@ -252,32 +279,5 @@
 		<published>2025-10-28T00:00:00Z</published>
 		<category term="Blog"/>
 		<summary type="text">The :target-before and :target-after pseudo-classes, range syntax for container queries, and more.</summary>
-	</entry>
-	<entry>
-		<title>Release notes: Chrome 142</title>
-		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/142"/>
-		<id>https://developer.chrome.com/release-notes/142</id>
-		<updated>2025-10-28T00:00:00Z</updated>
-		<published>2025-10-28T00:00:00Z</published>
-		<category term="Release notes"/>
-		<summary type="text">The :target-before and :target-after pseudo-classes, range syntax for container queries, and more.</summary>
-	</entry>
-	<entry>
-		<title>Blog: New in Chrome 141</title>
-		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-141"/>
-		<id>https://developer.chrome.com/blog/new-in-chrome-141</id>
-		<updated>2025-09-30T00:00:00Z</updated>
-		<published>2025-09-30T00:00:00Z</published>
-		<category term="Blog"/>
-		<summary type="text">The getAllRecords() method for IndexedDB, WebRTC Encoded Transform V2, and more.</summary>
-	</entry>
-	<entry>
-		<title>Release notes: Chrome 141</title>
-		<link rel="alternate" type="text/html" href="https://developer.chrome.com/release-notes/141"/>
-		<id>https://developer.chrome.com/release-notes/141</id>
-		<updated>2025-09-30T00:00:00Z</updated>
-		<published>2025-09-30T00:00:00Z</published>
-		<category term="Release notes"/>
-		<summary type="text">The getAllRecords() method for IndexedDB, WebRTC Encoded Transform V2, and more.</summary>
 	</entry>
 </feed>
