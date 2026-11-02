@@ -97,7 +97,5 @@ export const SOURCES = [
 		date: extractStableRelease,
 		// og:description is the same boilerplate on every page.
 		summary: extractFeatureSummary,
-		// Only fill in versions the developer.chrome.com release notes don’t have.
-		fallbackFor: 'release-notes',
 	},
 ];

@@ -1,12 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import {
-	buildAtom,
-	escapeXml,
-	mergeSources,
-	sortEntries,
-} from '../src/atom.js';
+import { buildAtom, escapeXml, sortEntries } from '../src/atom.js';
 
 const sample = [
 	{
@@ -48,30 +43,6 @@ test('sortEntries orders newest-first with deterministic tie-breaks', () => {
 			[150, 'blog'],
 			[150, 'release-notes'],
 			[200, 'blog'],
-		],
-	);
-});
-
-test('mergeSources drops fallback entries for covered versions', () => {
-	const sources = [
-		{ id: 'release-notes' },
-		{ id: 'blog' },
-		{ id: 'chromestatus', fallbackFor: 'release-notes' },
-	];
-	const merged = mergeSources(sources, [
-		[{ sourceId: 'release-notes', version: 153 }],
-		[{ sourceId: 'blog', version: 154 }],
-		[
-			{ sourceId: 'chromestatus', version: 153 },
-			{ sourceId: 'chromestatus', version: 154 },
-		],
-	]);
-	assert.deepEqual(
-		merged.map((e) => [e.sourceId, e.version]),
-		[
-			['release-notes', 153],
-			['blog', 154],
-			['chromestatus', 154],
 		],
 	);
 });

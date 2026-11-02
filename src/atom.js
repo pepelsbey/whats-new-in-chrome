@@ -31,24 +31,6 @@ export function sortEntries(entries) {
 	});
 }
 
-/**
- * Merge per-source entry lists (in `sources` order) into one list. A source
- * with `fallbackFor` only contributes versions the named source doesn’t have.
- */
-export function mergeSources(sources, perSource) {
-	const versionsOf = new Map(
-		sources.map((source, i) => [
-			source.id,
-			new Set(perSource[i].map((entry) => entry.version)),
-		]),
-	);
-	return sources.flatMap((source, i) => {
-		const covered = versionsOf.get(source.fallbackFor);
-		if (!covered) return perSource[i];
-		return perSource[i].filter((entry) => !covered.has(entry.version));
-	});
-}
-
 function renderEntry(entry) {
 	const summary = entry.summary
 		? `\n\t\t<summary type="text">${escapeXml(entry.summary)}</summary>`

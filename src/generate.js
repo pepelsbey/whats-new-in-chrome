@@ -4,7 +4,7 @@ import { writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { buildAtom, mergeSources, sortEntries } from './atom.js';
+import { buildAtom, sortEntries } from './atom.js';
 import { CONCURRENCY, FIRST_VERSION, MAX_ITEMS, SOURCES } from './config.js';
 import { discoverVersions, fetchPage, mapLimit } from './fetch.js';
 import { parsePage } from './parse.js';
@@ -61,10 +61,7 @@ async function generate() {
 	const perSource = await Promise.all(
 		SOURCES.map((source) => collectSource(source, now)),
 	);
-	const entries = sortEntries(mergeSources(SOURCES, perSource)).slice(
-		0,
-		MAX_ITEMS,
-	);
+	const entries = sortEntries(perSource.flat()).slice(0, MAX_ITEMS);
 
 	if (entries.length === 0) {
 		throw new Error('No feed entries were collected; refusing to write feed.');
