@@ -6,10 +6,19 @@
 	<link rel="self" type="application/atom+xml" href="https://pepelsbey.github.io/whats-new-in-chrome/feed.xml"/>
 	<link rel="alternate" type="text/html" href="https://pepelsbey.github.io/whats-new-in-chrome/"/>
 	<icon>https://pepelsbey.github.io/whats-new-in-chrome/apple-touch-icon.png</icon>
-	<updated>2026-10-20T00:00:00Z</updated>
+	<updated>2026-11-03T00:00:00Z</updated>
 	<author>
 		<name>Google Chrome</name>
 	</author>
+	<entry>
+		<title>Chrome Status: Chrome 157</title>
+		<link rel="alternate" type="text/html" href="https://chromestatus.com/release-notes/157"/>
+		<id>https://chromestatus.com/release-notes/157</id>
+		<updated>2026-11-03T00:00:00Z</updated>
+		<published>2026-11-03T00:00:00Z</published>
+		<category term="Release notes"/>
+		<summary type="text">Add javascriptURLs option to SanitizerConfig and Sanitizer, Expose ProgressEvent in service workers, Language Detector API on Android, and more.</summary>
+	</entry>
 	<entry>
 		<title>Chrome Status: Chrome 156</title>
 		<link rel="alternate" type="text/html" href="https://chromestatus.com/release-notes/156"/>
@@ -270,14 +279,5 @@
 		<published>2025-12-02T00:00:00Z</published>
 		<category term="Release notes"/>
 		<summary type="text">CSS anchored fallback container queries, side-relative positioning for background position longhands, and more.</summary>
-	</entry>
-	<entry>
-		<title>Blog: New in Chrome 142</title>
-		<link rel="alternate" type="text/html" href="https://developer.chrome.com/blog/new-in-chrome-142"/>
-		<id>https://developer.chrome.com/blog/new-in-chrome-142</id>
-		<updated>2025-10-28T00:00:00Z</updated>
-		<published>2025-10-28T00:00:00Z</published>
-		<category term="Blog"/>
-		<summary type="text">The :target-before and :target-after pseudo-classes, range syntax for container queries, and more.</summary>
 	</entry>
 </feed>
