@@ -17,7 +17,7 @@
 		<updated>2026-11-03T00:00:00Z</updated>
 		<published>2026-11-03T00:00:00Z</published>
 		<category term="Release notes"/>
-		<summary type="text">Add javascriptURLs option to SanitizerConfig and Sanitizer, Expose ProgressEvent in service workers, Language Detector API on Android, and more.</summary>
+		<summary type="text">CORS enforcement for Background Fetch, CSS corner shorthand properties, CSS position-visibility:anchor{s}-valid, and more.</summary>
 	</entry>
 	<entry>
 		<title>Chrome Status: Chrome 156</title>
